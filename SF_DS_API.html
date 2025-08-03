@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html class="client-nojs theme-auto view-light theme-light skin-theme-clientpref-day" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dedicated servers/HTTPS API - Official Satisfactory Wiki</title>
+<script>(function(){var className="client-js theme-auto view-light theme-light skin-theme-clientpref-day";var cookie=document.cookie.match(/(?:^|; )commons_enmwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"358794309dd056ecc0e967b2","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Dedicated_servers/HTTPS_API","wgTitle":"Dedicated servers/HTTPS API","wgCurRevisionId":55292,"wgRevisionId":55292,"wgArticleId":7841,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Dedicated_servers/HTTPS_API","wgRelevantArticleId":7841,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCargoDefaultQueryLimit":2000,"wgCargoMonthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgCiteReferencePreviewsActive":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"],"CommentStreams":{"canComment":true,"moderatorEdit":false,"moderatorDelete":false,"moderatorFastDelete":1,"showLabels":1,"newestStreamsOnTop":1,"initiallyCollapsed":false,"enableVoting":0,"enableWatchlist":1,"comments":[{"pageid":7995,"commentblockname":null,"associatedid":7841,"commenttitle":"Just an example... ","wikitext":"If You wanna use this API, You should add \u0026quot;/api/v1\u0026quot; to URL:\n===\n{{baseUrl}}/api/v1/\n===\nAnd use json in request body i.e.\n{\n   \u0026quot;function\u0026quot; : \u0026quot;QueryServerState\u0026quot;,\n   \u0026quot;data\u0026quot; : {\n      \u0026quot;clientCustomData\u0026quot; : \u0026quot;\u0026quot;\n   }\n}\n","html":"\u003Cp\u003EIf You wanna use this API, You should add \"/api/v1\" to URL:\n\u003C/p\u003E\n\u003Ch1\u003E\u003Cspan id=\".3D\"\u003E\u003C/span\u003E\u003Cspan class=\"mw-headline\" id=\"=\"\u003E=\u003C/span\u003E\u003Cspan class=\"mw-editsection\"\u003E\u003Cspan class=\"mw-editsection-bracket\"\u003E[\u003C/span\u003E\u003Ca href=\"/wiki/CommentStreams:F1db10801b491e23aa7c84a19b4f35ab?action=edit\u0026amp;section=1\" title=\"Edit section\u0026#039;s source code: =\"\u003E\u003Cspan\u003Eedit source\u003C/span\u003E\u003C/a\u003E\u003Cspan class=\"mw-editsection-bracket\"\u003E]\u003C/span\u003E\u003C/span\u003E\u003C/h1\u003E\n\u003Cp\u003E\u003Ca href=\"/wiki/Template:BaseUrl?action=edit\u0026amp;redlink=1\" class=\"new\" title=\"Template:BaseUrl (page does not exist)\" rel=\"nofollow\"\u003ETemplate:BaseUrl\u003C/a\u003E/api/v1/\n\u003C/p\u003E\n\u003Ch1\u003E\u003Cspan id=\".3D_2\"\u003E\u003C/span\u003E\u003Cspan class=\"mw-headline\" id=\"=_2\"\u003E=\u003C/span\u003E\u003Cspan class=\"mw-editsection\"\u003E\u003Cspan class=\"mw-editsection-bracket\"\u003E[\u003C/span\u003E\u003Ca href=\"/wiki/CommentStreams:F1db10801b491e23aa7c84a19b4f35ab?action=edit\u0026amp;section=2\" title=\"Edit section\u0026#039;s source code: =\"\u003E\u003Cspan\u003Eedit source\u003C/span\u003E\u003C/a\u003E\u003Cspan class=\"mw-editsection-bracket\"\u003E]\u003C/span\u003E\u003C/span\u003E\u003C/h1\u003E\n\u003Cp\u003EAnd use json in request body i.e.\n{\n\u003C/p\u003E\n\u003Cpre\u003E  \"function\"\u0026#160;: \"QueryServerState\",\n  \"data\"\u0026#160;: {\n     \"clientCustomData\"\u0026#160;: \"\"\n  }\n\u003C/pre\u003E\n\u003Cp\u003E}\n\u003C/p\u003E","username":"Serjevski","numreplies":0,"userdisplayname":"Serjevski","avatar":null,"moderated":null,"created":"Sep 26, 2024 at 8:36 am","created_timestamp":"1727339791","modified":null,"watching":false}]},"wgVisualEditorDisabledByHook":true};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","skins.vector.styles.legacy":"ready","wgg.skins.vector.styles.search":"ready","ext.CookieWarning.styles":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","ext.removeredlinks.styles":"ready","ext.usergroupbadges.styles":"ready","ext.globalui.styles":"ready"};RLPAGEMODULES=["ext.pygments.view","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.CookieWarning","ext.removeredlinks","ext.themes.switcher","ext.gadget.blueUsers","ext.gadget.userProfile","ext.gadget.uploadMultipleFiles","ext.checkUser.clientHints","ext.importarticles","ext.importjs","ext.CommentStreams","ext.cargo.purge","ext.globalui"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=ext.CookieWarning.styles%7Cext.globalui.styles%7Cext.pygments%7Cext.removeredlinks.styles%7Cext.usergroupbadges.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy%7Cwgg.skins.vector.styles.search&amp;only=styles&amp;skin=vector">
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<script async="" src="/load.php?lang=en&amp;skin=vector&amp;modules=ext.themes.apply&amp;only=scripts&amp;skin=vector&amp;raw=1"></script>
+<meta name="generator" content="MediaWiki 1.43.3">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="This page is a copy of the HTTPS API section of the DedicatedServerAPIDocs.md document distributed to every player, with some community notes and edits.&#10;For a list of community tools, see Dedicated_servers#Community_Tools.&#10;The Dedicated Server HTTPS API is designed for reliably retrieving data from the...">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<style type="text/css">@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito/5.0.16/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}</style>
+<link rel="apple-touch-icon" href="/images/4/4a/Site-favicon.ico">
+<link rel="icon" href="/images/4/4a/Site-favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/rest.php/v1/search" title="Satisfactory Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://satisfactory.wiki.gg/api.php?action=rsd">
+<link rel="canonical" href="https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0">
+<link rel="alternate" type="application/atom+xml" title="Satisfactory Wiki Atom feed" href="/wiki/Special:RecentChanges?feed=atom">
+	<meta property="og:type" content="article">
+
+	<meta property="og:site_name" content="Official Satisfactory Wiki">
+
+	<meta property="og:title" content="Dedicated servers/HTTPS API">
+
+	<meta property="og:description" content="This page is a copy of the HTTPS API section of the DedicatedServerAPIDocs.md document distributed to every player, with some community notes and edits.&#10;For a list of community tools, see Dedicated_servers#Community_Tools.&#10;The Dedicated Server HTTPS API is designed for reliably retrieving data from the...">
+
+	<meta property="og:url" content="https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dedicated servers/HTTPS API">
+<meta property="og:site_name" content="Official Satisfactory Wiki">
+<meta property="og:url" content="https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API">
+<meta property="og:description" content="This page is a copy of the HTTPS API section of the DedicatedServerAPIDocs.md document distributed to every player, with some community notes and edits.&#10;For a list of community tools, see Dedicated_servers#Community_Tools.&#10;The Dedicated Server HTTPS API is designed for reliably retrieving data from the...">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Dedicated servers/HTTPS API - Official Satisfactory Wiki","headline":"Dedicated servers/HTTPS API - Official Satisfactory Wiki","mainEntityOfPage":"Dedicated servers/HTTPS API","url":"https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API","description":"This page is a copy of the HTTPS API section of the DedicatedServerAPIDocs.md document distributed to every player, with some community notes and edits.\nFor a list of community tools, see Dedicated_servers#Community_Tools.\nThe Dedicated Server HTTPS API is designed for reliably retrieving data from the...","datePublished":"2024-09-13T23:41:22Z","author":{"@type":"Organization","name":"Official Satisfactory Wiki","url":"https://satisfactory.wiki.gg/","logo":{"@type":"ImageObject","url":"/images/e/e6/Site-logo.png"}},"publisher":{"@type":"Organization","name":"wiki.gg","url":"https://wiki.gg","logo":{"@type":"ImageObject","url":"https://commons.wiki.gg/images/2/27/Network_header_logo.svg"},"sameAs":["https://bsky.app/profile/wiki.gg","https://www.youtube.com/@ggwikis","https://x.com/wikigg_official"]}}</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P68LVFKN');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="wgg-dom-version-1_43 skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Dedicated_servers_HTTPS_API rootpage-Dedicated_servers skin-vector action-view skin--responsive"><header id="wgg-netbar">
+	<div class="wgg-netbar__left">
+		<div class="wgg-netbar__logo">
+			<a href="/" aria-label="wiki.gg">
+				<img height=25 alt="wiki.gg logo" src="https://commons.wiki.gg/images/2/27/Network_header_logo.svg?feeba7">
+			</a>
+		</div>
+	</div>
+
+	<nav class="wgg-netbar__user-links" aria-label="Personal tools">
+		<div id="p-personal" class="mw-portlet mw-portlet-personal"  >
+		    
+		    <ul>
+		            <li id="pt-createaccount" class="mw-list-item wgg-netbar__desktop-only"><a data-mw="interface" class=""  href="/wiki/Special:CreateAccount?returnto=Dedicated+servers%2FHTTPS+API" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li>
+		            <li id="pt-login" class="mw-list-item wgg-netbar__desktop-only"><a data-mw="interface" class=""  href="/wiki/Special:UserLogin?returnto=Dedicated+servers%2FHTTPS+API" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li>
+		    </ul>
+		    
+		</div>
+
+		<div id="wgg-user-menu-overflow" class="wgg-netbar__dropdown wgg-netbar__mobile-only">
+			<input type="checkbox"
+				id="wgg-user-menu-overflow-checkbox"
+				role="button"
+				aria-haspopup="true"
+				aria-labelledby="wgg-user-menu-overflow-label"
+			>
+			<label
+				id="wgg-user-menu-overflow-label"
+		        for="wgg-user-menu-overflow-checkbox"
+				class="wgg-netbar__icon-button"
+			><span class="wgg-netbar-icon wgg-netbar-icon--overflow"></span><span>Toggle personal tools menu</span></label>
+
+			<div class="wgg-netbar__dropdown-content">
+				<div id="p-user-menu" class="mw-portlet mw-portlet-user-menu"  >
+				    
+				    <ul>
+				            <li id="pt-createaccount-overflow" class="mw-list-item wgg-netbar__mobile-only"><a data-mw="interface" class=""  href="/wiki/Special:CreateAccount?returnto=Dedicated+servers%2FHTTPS+API" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li>
+				            <li id="pt-login-overflow" class="mw-list-item wgg-netbar__mobile-only"><a data-mw="interface" class=""  href="/wiki/Special:UserLogin?returnto=Dedicated+servers%2FHTTPS+API" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li>
+				    </ul>
+				    
+				</div>
+			</div>
+		</div>
+</nav>
+
+</header>
+
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div class="content-wrapper">
+	<div id="mw-navigation">
+		<h2>Navigation menu</h2>
+		<div id="mw-head">
+			<div id="left-navigation">
+				
+<div id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vectorTabs vector-menu" aria-labelledby="p-namespaces-label"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API" title="View the content page [c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/wiki/Talk:Dedicated_servers/HTTPS_API" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+				
+<div id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+			</div>
+			<div id="right-navigation">
+				
+<div id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vectorTabs vector-menu" aria-labelledby="p-views-label"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Views</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API"><span>Read</span></a></li><li id="ca-edit" class="mw-list-item"><a href="/wiki/Special:CreateAccount?warning=accountrequiredtoedit&amp;returnto=Dedicated_servers%2FHTTPS_API&amp;returntoquery=action%3Dedit" title="Edit this page [e]" accesskey="e"><span>Sign up to edit</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API?action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API?action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+				
+<div id="p-cactions" class="mw-portlet mw-portlet-cactions vectorMenu vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label"  title="More options" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="ca-cargo-purge" class="mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API?action=purge"><span>Purge cache</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+				
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Search</h3>
+	<form action="/wiki/Special:Search" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Search Satisfactory Wiki" aria-label="Search Satisfactory Wiki" autocapitalize="sentences" spellcheck="false" title="Search Satisfactory Wiki [f]" accesskey="f" id="searchInput"
+			>
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+		</div>
+	</form>
+</div>
+
+			</div>
+		</div>
+		
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/"
+			title="Visit the main page"></a>
+	</div>
+	
+<div id="p-Navigation" class="mw-portlet mw-portlet-Navigation vector-menu-portal portal vector-menu" aria-labelledby="p-Navigation-label"  >
+	<h3
+		id="p-Navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Navigation</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/" title="Visit the main page [z]" accesskey="z"><span>Main page</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Satisfactory_Wiki:Community_portal" title="About the project, what you can do, where to find things"><span>Community portal</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x"><span>Random page</span></a></li><li id="n-Admin-noticeboard" class="mw-list-item"><a href="/wiki/Satisfactory_Wiki:Admin_noticeboard"><span>Admin noticeboard</span></a></li><li id="n-Wiki-rules" class="mw-list-item"><a href="/wiki/Satisfactory_Wiki:Rules"><span>Wiki rules</span></a></li><li id="n-Style-guide" class="mw-list-item"><a href="/wiki/Satisfactory_Wiki:Style_guide"><span>Style guide</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-Useful_pages" class="mw-portlet mw-portlet-Useful_pages vector-menu-portal portal vector-menu" aria-labelledby="p-Useful_pages-label"  >
+	<h3
+		id="p-Useful_pages-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Useful pages</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="n-Buildings" class="mw-list-item"><a href="/wiki/Category:Buildings"><span>Buildings</span></a></li><li id="n-Items" class="mw-list-item"><a href="/wiki/Category:Items"><span>Items</span></a></li><li id="n-Fluids" class="mw-list-item"><a href="/wiki/Category:Fluids"><span>Fluids</span></a></li><li id="n-Milestones" class="mw-list-item"><a href="/wiki/Milestones"><span>Milestones</span></a></li><li id="n-MAM" class="mw-list-item"><a href="/wiki/MAM"><span>MAM</span></a></li><li id="n-AWESOME-Sink" class="mw-list-item"><a href="/wiki/AWESOME_Sink"><span>AWESOME Sink</span></a></li><li id="n-Space-Elevator" class="mw-list-item"><a href="/wiki/Space_Elevator"><span>Space Elevator</span></a></li><li id="n-Power" class="mw-list-item"><a href="/wiki/Power"><span>Power</span></a></li><li id="n-Future-content" class="mw-list-item"><a href="/wiki/Future_content"><span>Future content</span></a></li><li id="n-Community-tools" class="mw-list-item"><a href="/wiki/Online_tools"><span>Community tools</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-Satisfactory_links" class="mw-portlet mw-portlet-Satisfactory_links vector-menu-portal portal vector-menu" aria-labelledby="p-Satisfactory_links-label"  >
+	<h3
+		id="p-Satisfactory_links-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Satisfactory links</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="n-Official-website" class="mw-list-item"><a href="https://www.satisfactorygame.com/" rel="nofollow"><span>Official website</span></a></li><li id="n-Q&amp;A-site" class="mw-list-item"><a href="https://questions.satisfactorygame.com/" rel="nofollow"><span>Q&amp;A site</span></a></li><li id="n-Official-merch" class="mw-list-item"><a href="https://lizarddoggo.com/" rel="nofollow"><span>Official merch</span></a></li><li id="n-Steam" class="mw-list-item"><a href="https://store.steampowered.com/app/526870/Satisfactory/" rel="nofollow"><span>Steam</span></a></li><li id="n-Epic-Games-Store" class="mw-list-item"><a href="https://www.epicgames.com/store/en-US/product/satisfactory/home" rel="nofollow"><span>Epic Games Store</span></a></li><li id="n-Humble-Bundle" class="mw-list-item"><a href="https://www.humblebundle.com/store/satisfactory" rel="nofollow"><span>Humble Bundle</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Tools</span>
+	</h3>
+	<div class="vector-menu-content body">
+		
+		<ul class="vector-menu-content-list menu">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Dedicated_servers/HTTPS_API" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Dedicated_servers/HTTPS_API" rel="nofollow" title="Recent changes in pages linked from this page"><span>Related changes</span></a></li><li id="t-newpage" class="mw-list-item"><a href="/wiki/Special:NewPage" accesskey="]"><span>New page</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li><li id="t-info" class="mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API?action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cargopagevalueslink" class="mw-list-item"><a href="/wiki/Dedicated_servers/HTTPS_API?action=dbdata"><span>Database data</span></a></li><li id="t-cite" class="mw-list-item"><a href="/wiki/Special:CiteThisPage?page=Dedicated_servers%2FHTTPS_API&amp;id=55292&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+</div>
+
+	</div>
+	<div id="content" class="mw-body" role="main">
+		<aside id="wikigg-sl-header" data-mw="WggShowcaseLayout">
+        <div
+            class="wikigg-showcase__unit wikigg-showcase__reserved--lb"
+            data-wgg-unit-type="internal"
+        ></div>
+</aside>
+
+		<div class="content-body">
+			<main>
+				<a id="top"></a>
+				<div id="siteNotice"></div>
+				<div class="mw-indicators">
+				</div>
+				<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Dedicated servers/HTTPS API</span></h1>
+				<div id="bodyContent" class="vector-body">
+					<div id="siteSub" class="noprint">From Satisfactory Wiki</div>
+					<div id="contentSub"><div class="subpages">&lt; <bdi dir="ltr"><a href="/wiki/Dedicated_servers" title="Dedicated servers">Dedicated servers</a></bdi></div></div>
+					<div id="contentSub2"></div>
+					
+					<div id="jump-to-nav"></div>
+					<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+					<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+					<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><div class="table-of-contents--right" style="clear:right;"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#HTTPS_API"><span class="tocnumber">1</span> <span class="toctext">HTTPS API</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Certificate_Validation_and_Encryption"><span class="tocnumber">1.1</span> <span class="toctext">Certificate Validation and Encryption</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Schema"><span class="tocnumber">1.2</span> <span class="toctext">Schema</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Request_Schema"><span class="tocnumber">1.2.1</span> <span class="toctext">Request Schema</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Response_Schema"><span class="tocnumber">1.2.2</span> <span class="toctext">Response Schema</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#File_Responses"><span class="tocnumber">1.2.3</span> <span class="toctext">File Responses</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Multipart_Requests"><span class="tocnumber">1.2.4</span> <span class="toctext">Multipart Requests</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Authentication"><span class="tocnumber">2</span> <span class="toctext">Authentication</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#HealthCheck"><span class="tocnumber">3</span> <span class="toctext">HealthCheck</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Summary"><span class="tocnumber">3.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Function_Request_Data"><span class="tocnumber">3.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Function_Response_Data"><span class="tocnumber">3.3</span> <span class="toctext">Function Response Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#VerifyAuthentication_Token"><span class="tocnumber">4</span> <span class="toctext">VerifyAuthentication Token</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Summary_2"><span class="tocnumber">4.1</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#PasswordlessLogin"><span class="tocnumber">5</span> <span class="toctext">PasswordlessLogin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Summary_3"><span class="tocnumber">5.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Function_Request_Data_2"><span class="tocnumber">5.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Function_Response_Data_2"><span class="tocnumber">5.3</span> <span class="toctext">Function Response Data</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Possible_Errors"><span class="tocnumber">5.4</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#PasswordLogin"><span class="tocnumber">6</span> <span class="toctext">PasswordLogin</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Summary_4"><span class="tocnumber">6.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Function_Request_Data_3"><span class="tocnumber">6.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Function_Response_Data_3"><span class="tocnumber">6.3</span> <span class="toctext">Function Response Data</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Possible_Errors_2"><span class="tocnumber">6.4</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#QueryServerState"><span class="tocnumber">7</span> <span class="toctext">QueryServerState</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Summary_5"><span class="tocnumber">7.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Function_Response_Data_4"><span class="tocnumber">7.2</span> <span class="toctext">Function Response Data</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#ServerGameState"><span class="tocnumber">7.3</span> <span class="toctext">ServerGameState</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Community_Notes"><span class="tocnumber">7.4</span> <span class="toctext">Community Notes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#GetServerOptions"><span class="tocnumber">8</span> <span class="toctext">GetServerOptions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-31"><a href="#Summary_6"><span class="tocnumber">8.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Function_Response_Data_5"><span class="tocnumber">8.2</span> <span class="toctext">Function Response Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#GetAdvancedGameSettings"><span class="tocnumber">9</span> <span class="toctext">GetAdvancedGameSettings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#Summary_7"><span class="tocnumber">9.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Function_Response_Data_6"><span class="tocnumber">9.2</span> <span class="toctext">Function Response Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#ApplyAdvancedGameSettings"><span class="tocnumber">10</span> <span class="toctext">ApplyAdvancedGameSettings</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="#Summary_8"><span class="tocnumber">10.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="#Function_Request_Data_4"><span class="tocnumber">10.2</span> <span class="toctext">Function Request Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-39"><a href="#ClaimServer"><span class="tocnumber">11</span> <span class="toctext">ClaimServer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-40"><a href="#Summary_9"><span class="tocnumber">11.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="#Function_Request_Data_5"><span class="tocnumber">11.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="#Function_Response_Data_7"><span class="tocnumber">11.3</span> <span class="toctext">Function Response Data</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="#Possible_Errors_3"><span class="tocnumber">11.4</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-44"><a href="#RenameServer"><span class="tocnumber">12</span> <span class="toctext">RenameServer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-45"><a href="#Summary_10"><span class="tocnumber">12.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-46"><a href="#Function_Request_Data_6"><span class="tocnumber">12.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-47"><a href="#Possible_Errors_4"><span class="tocnumber">12.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-48"><a href="#SetClientPassword"><span class="tocnumber">13</span> <span class="toctext">SetClientPassword</span></a>
+<ul>
+<li class="toclevel-2 tocsection-49"><a href="#Summary_11"><span class="tocnumber">13.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-50"><a href="#Function_Request_Data_7"><span class="tocnumber">13.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-51"><a href="#Possible_Errors_5"><span class="tocnumber">13.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-52"><a href="#SetAdminPassword"><span class="tocnumber">14</span> <span class="toctext">SetAdminPassword</span></a>
+<ul>
+<li class="toclevel-2 tocsection-53"><a href="#Summary_12"><span class="tocnumber">14.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-54"><a href="#Function_Request_Data_8"><span class="tocnumber">14.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-55"><a href="#Possible_Errors_6"><span class="tocnumber">14.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-56"><a href="#SetAutoLoadSessionName"><span class="tocnumber">15</span> <span class="toctext">SetAutoLoadSessionName</span></a>
+<ul>
+<li class="toclevel-2 tocsection-57"><a href="#Summary_13"><span class="tocnumber">15.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-58"><a href="#Function_Request_Data_9"><span class="tocnumber">15.2</span> <span class="toctext">Function Request Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-59"><a href="#Run_Command"><span class="tocnumber">16</span> <span class="toctext">Run Command</span></a>
+<ul>
+<li class="toclevel-2 tocsection-60"><a href="#Summary_14"><span class="tocnumber">16.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-61"><a href="#Function_Request_Data_10"><span class="tocnumber">16.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-62"><a href="#Function_Response_Data_8"><span class="tocnumber">16.3</span> <span class="toctext">Function Response Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-63"><a href="#Shutdown"><span class="tocnumber">17</span> <span class="toctext">Shutdown</span></a>
+<ul>
+<li class="toclevel-2 tocsection-64"><a href="#Summary_15"><span class="tocnumber">17.1</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-65"><a href="#ApplyServerOptions"><span class="tocnumber">18</span> <span class="toctext">ApplyServerOptions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-66"><a href="#Summary_16"><span class="tocnumber">18.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="#Function_Request_Data_11"><span class="tocnumber">18.2</span> <span class="toctext">Function Request Data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-68"><a href="#CreateNewGame"><span class="tocnumber">19</span> <span class="toctext">CreateNewGame</span></a>
+<ul>
+<li class="toclevel-2 tocsection-69"><a href="#Summary_17"><span class="tocnumber">19.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-70"><a href="#Function_Request_Data_12"><span class="tocnumber">19.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-71"><a href="#ServerNewGameData"><span class="tocnumber">19.3</span> <span class="toctext">ServerNewGameData</span></a>
+<ul>
+<li class="toclevel-3 tocsection-72"><a href="#Note"><span class="tocnumber">19.3.1</span> <span class="toctext">Note</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-73"><a href="#SaveGame"><span class="tocnumber">20</span> <span class="toctext">SaveGame</span></a>
+<ul>
+<li class="toclevel-2 tocsection-74"><a href="#Summary_18"><span class="tocnumber">20.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-75"><a href="#Function_Request_Data_13"><span class="tocnumber">20.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-76"><a href="#Possible_Errors_7"><span class="tocnumber">20.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-77"><a href="#DeleteSaveFile"><span class="tocnumber">21</span> <span class="toctext">DeleteSaveFile</span></a>
+<ul>
+<li class="toclevel-2 tocsection-78"><a href="#Summary_19"><span class="tocnumber">21.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-79"><a href="#Function_Request_Data_14"><span class="tocnumber">21.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-80"><a href="#Possible_Errors_8"><span class="tocnumber">21.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-81"><a href="#DeleteSaveSession"><span class="tocnumber">22</span> <span class="toctext">DeleteSaveSession</span></a>
+<ul>
+<li class="toclevel-2 tocsection-82"><a href="#Summary_20"><span class="tocnumber">22.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-83"><a href="#Function_Request_Data_15"><span class="tocnumber">22.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-84"><a href="#Possible_Errors_9"><span class="tocnumber">22.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-85"><a href="#EnumerateSessions"><span class="tocnumber">23</span> <span class="toctext">EnumerateSessions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-86"><a href="#Summary_21"><span class="tocnumber">23.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-87"><a href="#Function_Response_Data_9"><span class="tocnumber">23.2</span> <span class="toctext">Function Response Data</span></a></li>
+<li class="toclevel-2 tocsection-88"><a href="#Possible_Errors_10"><span class="tocnumber">23.3</span> <span class="toctext">Possible Errors</span></a></li>
+<li class="toclevel-2 tocsection-89"><a href="#SessionSaveStruct"><span class="tocnumber">23.4</span> <span class="toctext">SessionSaveStruct</span></a></li>
+<li class="toclevel-2 tocsection-90"><a href="#SaveHeader"><span class="tocnumber">23.5</span> <span class="toctext">SaveHeader</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-91"><a href="#LoadGame"><span class="tocnumber">24</span> <span class="toctext">LoadGame</span></a>
+<ul>
+<li class="toclevel-2 tocsection-92"><a href="#Summary_22"><span class="tocnumber">24.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-93"><a href="#Function_Request_Data_16"><span class="tocnumber">24.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-94"><a href="#Possible_Errors_11"><span class="tocnumber">24.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-95"><a href="#UploadSaveGame"><span class="tocnumber">25</span> <span class="toctext">UploadSaveGame</span></a>
+<ul>
+<li class="toclevel-2 tocsection-96"><a href="#Summary_23"><span class="tocnumber">25.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-97"><a href="#Multipart_Field"><span class="tocnumber">25.2</span> <span class="toctext">Multipart Field</span></a></li>
+<li class="toclevel-2 tocsection-98"><a href="#Function_Request_Data_17"><span class="tocnumber">25.3</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-99"><a href="#Possible_Errors_12"><span class="tocnumber">25.4</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-100"><a href="#DownloadSaveGame"><span class="tocnumber">26</span> <span class="toctext">DownloadSaveGame</span></a>
+<ul>
+<li class="toclevel-2 tocsection-101"><a href="#Summary_24"><span class="tocnumber">26.1</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-2 tocsection-102"><a href="#Function_Request_Data_18"><span class="tocnumber">26.2</span> <span class="toctext">Function Request Data</span></a></li>
+<li class="toclevel-2 tocsection-103"><a href="#Possible_Errors_13"><span class="tocnumber">26.3</span> <span class="toctext">Possible Errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-104"><a href="#See_also"><span class="tocnumber">27</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+</div>
+<p>This page is a copy of the HTTPS API section of the <code>DedicatedServerAPIDocs.md</code> document distributed to every player, with some community notes and edits.
+</p><p>For a list of community tools, see <a href="/wiki/Dedicated_servers#Community_Tools" title="Dedicated servers">Dedicated_servers#Community_Tools</a>.
+</p>
+<h2><span class="mw-headline" id="HTTPS_API">HTTPS API</span></h2>
+<p>The Dedicated Server HTTPS API is designed for reliably retrieving data from the running dedicated server instance and performing server management. It is available when the server has started up and is not actively loading a save game or performing a map change. To check for HTTPS API availability, the Lightweight Query API can be used.
+</p><p>The HTTPS API endpoint is available at <code>/api/v1</code> (e.g. <code><a rel="nofollow" class="external free" href="https://127.0.0.1:7777/api/v1">https://127.0.0.1:7777/api/v1</a></code>).
+</p>
+<h3><span class="mw-headline" id="Certificate_Validation_and_Encryption">Certificate Validation and Encryption</span></h3>
+<p>The HTTPS API is always wrapped in a TLS tunnel, even if the user did not provide a certificate for the Dedicated Server.
+</p><p>User certificates will be looked up at the following path (where $InstallRoot$ is the path where the Dedicated Server is installed):
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>File Path
+</th>
+<th>File Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>$InstallRoot$/FactoryGame/Certificates/cert_chain.pem
+</td>
+<td>Certificate Chain (PEM)
+</td>
+<td>Certificate chain in PEM format
+</td></tr>
+<tr>
+<td>$InstallRoot$/FactoryGame/Certificates/private_key.pem
+</td>
+<td>Private Key (PEM)
+</td>
+<td>Certificate's private key in PEM format
+</td></tr></tbody></table>
+<p>If no certificate is provided by the user, the Dedicated Server will generate its own self-signed certificate and use it to encrypt all traffic flowing through the HTTPS API. Clients should be able to handle the HTTPS certificate being self-signed, recognize that case, and handle it appropriately.
+</p><p><b>Community Note</b>: The generated TLS cert is saved into the ServerSettings.PORT.sav. See <a href="/wiki/Dedicated_servers/Configuration_files#Server_Settings_File" title="Dedicated servers/Configuration files">Dedicated_servers/Configuration_files#Server_Settings_File</a>
+</p><p>When presented with a self-signed certificate from the Dedicated Server, the game client will prompt the user to manually confirm that the certificate is from a trusted authority. Once confirmed, the certificate is cached locally and is trusted for that specific server until the user revokes it or the server changes the certificate.
+</p><p><b>Community Note: Many implementations of cURL will fail when validating a self-signed certificate as used in many servers and adding <code>--insecure</code> or the equivalent may be required to establish a connection to the server</b>
+</p>
+<h3><span class="mw-headline" id="Schema">Schema</span></h3>
+<p>The HTTPS API is based on a simple JSON schema used to pass data to the functions executing on the server and pass responses back to the caller. All server API functions are executed as POST requests, although certain query requests can be executed via GET requests if they do not require any data to be provided.
+</p>
+<h4><span class="mw-headline" id="Request_Schema">Request Schema</span></h4>
+<p>Content Type for requests should be set to <code>application/json</code>. Encoding should preferably be set to <code>utf-8</code>, but Dedicated Servers support all encodings supported by the ICU localization library.
+</p><p>Request Object has the following properties:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Property Name
+</th>
+<th>Property Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>function
+</td>
+<td>string
+</td>
+<td>Name of the API function to execute. Names of the API functions and their behavior are described below
+</td></tr>
+<tr>
+<td>data
+</td>
+<td>object
+</td>
+<td>Data to pass to the function to execute. Format of the object depends on the function being executed
+</td></tr></tbody></table>
+<p>An example JSON would look like this:
+</p>
+<div class="mw-highlight mw-highlight-lang-json mw-content-ltr mw-highlight-copy" dir="ltr"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;function&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SetAutoLoadSession&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;SessionName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What a game&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Dedicated Server HTTPS API supports the following standard headers:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Header Name
+</th>
+<th>Notes
+</th></tr>
+<tr>
+<td>Content-Encoding
+</td>
+<td>Optional. Only gzip and deflate are supported
+</td></tr>
+<tr>
+<td>Authorization
+</td>
+<td>Required for most non-Authorization API functions. Only Bearer tokens are supported. See Authorization for more info
+</td></tr></tbody></table>
+<p>The following Satisfactory-specific headers can also be used in the request:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Header Name
+</th>
+<th>Data Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>X-FactoryGame-PlayerId
+</td>
+<td>Hex String
+</td>
+<td>Hex-encoded byte array encoding the ID of the player on behalf of which the request is made
+</td></tr></tbody></table>
+<p>The <code>X-FactoryGame-PlayerId</code> header is only needed to obtain the server join/encryption tickets used for joining the server, and its format is highly specific to the Satisfactory version running, Unreal Engine version, and the Online Backend used by the player.
+</p><p>Generally, the first byte of the ID indicates the type of Online Backend used (1 for Epic Games Store, 6 for Steam, see values in UE's EOnlineServices type), and the following bytes are specific to the Online Backend, but generally represent the player account ID. For Steam, it would be a big-endian uint64 representing the player's SteamID64, and for Epic, it would be a HEX-encoded EOS ProductUserId string.
+</p>
+<h4><span class="mw-headline" id="Response_Schema">Response Schema</span></h4>
+<p>The Dedicated Server can return a variety of different HTTP status codes, most prominent ones are described here:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Status Code
+</th>
+<th>Status Code Name
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>200
+</td>
+<td>Ok
+</td>
+<td>The function has been executed successfully. The response body will either be an Error Response or a Success Response
+</td></tr>
+<tr>
+<td>201
+</td>
+<td>Created
+</td>
+<td>The function has been executed and returned no error. Returned by some functions to indicate that a new file has been created, such as UploadSaveGame
+</td></tr>
+<tr>
+<td>202
+</td>
+<td>Accepted
+</td>
+<td>The function has been executed, but is still being processed. This is returned by some functions with side effects, such as LoadGame
+</td></tr>
+<tr>
+<td>204
+</td>
+<td>No Content
+</td>
+<td>The function has been executed successfully, but returned no data (and no error)
+</td></tr>
+<tr>
+<td>400
+</td>
+<td>Bad Request
+</td>
+<td>Only returned when the request body failed to be parsed as valid JSON or multipart request. In other cases, error response <code>bad_request</code> is used
+</td></tr>
+<tr>
+<td>401
+</td>
+<td>Denied
+</td>
+<td>Authentication token is missing, cannot be parsed, or has expired
+</td></tr>
+<tr>
+<td>403
+</td>
+<td>Forbidden
+</td>
+<td>Provided authentication does not allow executing the provided function, or when a function requiring authentication is called without one
+</td></tr>
+<tr>
+<td>404
+</td>
+<td>Not Found
+</td>
+<td>The specified function cannot be found, or when the function cannot find the specified resource in some cases (for example, for DownloadSaveGame)
+</td></tr>
+<tr>
+<td>415
+</td>
+<td>Unsupported Media
+</td>
+<td>Specified charset or content encoding is not supported, or multipart data is malformed
+</td></tr>
+<tr>
+<td>500
+</td>
+<td>Server Error
+</td>
+<td>An internal server error has occurred when executing the function
+</td></tr></tbody></table>
+<p>The Content Type of the server response will be set to <code>application/json</code> and <code>utf-8</code> encoding. Depending on the outcome of the operation, it might return either an error response or a data response.
+</p><p>Error Response has the following structure:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Property Name
+</th>
+<th>Property Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>errorCode
+</td>
+<td>string
+</td>
+<td>Machine-friendly code indicating the type of the error that the executed function returned
+</td></tr>
+<tr>
+<td>errorMessage
+</td>
+<td>string?
+</td>
+<td>Optional. Human-friendly error message explaining the error
+</td></tr>
+<tr>
+<td>errorData
+</td>
+<td>object?
+</td>
+<td>Optional. Additional information about the error, for example, list of parameters that are missing
+</td></tr></tbody></table><p>
+An example JSON would look like this:</p><div class="mw-highlight mw-highlight-lang-json mw-content-ltr mw-highlight-copy" dir="ltr"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;insufficient_scope&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;errorMessage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The client is missing required privileges to access the given function&quot;</span>
+<span class="p">}</span>
+</pre></div><p>Success Response has the following structure:
+</p><table class="wikitable">
+
+<tbody><tr>
+<th>Property Name
+</th>
+<th>Property Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>data
+</td>
+<td>object?
+</td>
+<td>Data returned by the function executed. Type depends on the function the request performed
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="File_Responses">File Responses</span></h4>
+<p>Certain Dedicated Server API functions can respond with a file attachment instead of using the standard Server Response JSON schema. Such responses can be distinguished by the presence of the <code>Content-Disposition</code> header, indicating that the <code>Content-Type</code> and body represent a file attachment and not a standard Server API response body.
+</p><p>Such functions can still return a normal server response in case of an Error Response. Currently, the only function that utilizes the File Response functionality is <code>DownloadSaveGame</code>, which returns the save game file as a response without any additional Server API metadata attachments.
+</p>
+<h4><span class="mw-headline" id="Multipart_Requests">Multipart Requests</span></h4>
+<p>Certain Server API functions can take both Server API request payload and a file attachment. Such functions should use <code>multipart/form-data</code> Content-Type and encode both the payload and the Server API request body as separate multipart parts.
+</p><p>Multipart Part named <code>data</code> should be present in all multipart requests and encode the request object JSON with the same schema and restrictions as the normal non-multipart requests. The charset should be provided as a separate multipart part with a special name <code>_charset_</code>, and contain the name of the charset used for encoding the Server API request as plain text.
+</p><p>Names of other multipart attachments are specific to the functions using multipart requests. Currently, multipart requests are only used by the <code>UploadSaveGame</code> function for uploading save game files.
+</p>
+<h2><span class="mw-headline" id="Authentication">Authentication</span></h2>
+<p>The Dedicated Server API requires authentication for most of its functions. Authentication format used is Bearer tokens, which are issued by the Dedicated Server when using certain API functions that require no Authentication (such as <code>PasswordlessLogin</code>), or functions that require additional security verification (such as <code>PasswordLogin</code>). Tokens generated by these functions are short-lived and are bound to the specific player account.
+</p><p>Authentication Tokens internally consist of two parts separated by the dot character ('.'):
+</p>
+<ul><li>Base64-encoded JSON token payload</li>
+<li>HEX-encoded Fingerprint</li></ul>
+<p>JSON token payload can be retrieved to determine the privilege level granted by the token, while the fingerprint part is used by the server to check the validity of the token and whenever it can be used currently.
+</p><p>Internal Authentication Token Payload:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Property Name
+</th>
+<th>Property Type
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>pl
+</td>
+<td>string
+</td>
+<td>Privilege Level granted by this token. See possible values below
+</td></tr></tbody></table>
+<p>Possible Privilege Level values:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Privilege Level
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>NotAuthenticated
+</td>
+<td>The client is not Authenticated
+</td></tr>
+<tr>
+<td>Client
+</td>
+<td>Client is Authenticated with Client privileges
+</td></tr>
+<tr>
+<td>Administrator
+</td>
+<td>Client is Authenticated with Admin privileges
+</td></tr>
+<tr>
+<td>InitialAdmin
+</td>
+<td>Client is Authenticated as Initial Admin with privileges to Claim the server
+</td></tr>
+<tr>
+<td>APIToken
+</td>
+<td>Client is Authenticated as Third Party Application
+</td></tr></tbody></table>
+<p>The following functions are used by the game client to perform player authentication:
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th>Function Name
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>PasswordlessLogin
+</td>
+<td>Attempts logging in as a player without a password.
+</td></tr>
+<tr>
+<td>PasswordLogin
+</td>
+<td>Attempts logging in as a player with a password.
+</td></tr>
+<tr>
+<td>VerifyAuthenticationToken
+</td>
+<td>Checks if the provided Authentication token is valid. Returns Ok if valid
+</td></tr></tbody></table>
+<p>Third Party Applications should NOT use <code>PasswordLogin</code> or <code>PasswordlessLogin</code>, and should instead rely on the Application Tokens.
+</p><p>Application tokens do not expire and are granted by issuing the command <code>server.GenerateAPIToken</code> in the Dedicated Server console. The generated token can then be passed to the <code>Authorization</code> header with Bearer type to perform any Server API requests on behalf of the server.
+</p><p>Application tokens generated previously can still be pruned using the <code>server.InvalidateAPITokens</code> console command.
+</p><p>Authentication requirement can be lifted for locally running Dedicated Server instances serving on the loopback network adapter. To allow unrestricted Dedicated Server API access on the localhost, set <code>FG.DedicatedServer.AllowInsecureLocalAccess</code> console variable to <code>1</code>. It can be performed automatically using the following command line argument: <code>-ini:Engine:[SystemSettings]:FG.DedicatedServer.AllowInsecureLocalAccess=1</code>
+</p>
+<h2><span class="mw-headline" id="HealthCheck">HealthCheck</span></h2>
+<h3><span class="mw-headline" id="Summary">Summary</span></h3>
+<p>Performs a health check on the Dedicated Server API. Allows passing additional data between Modded Dedicated Server and Modded Game Client.
+This function requires no Authentication.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ClientCustomData</td>
+<td>string</td>
+<td>Custom Data passed from the Game Client or Third Party service. Not used by vanilla Dedicated Servers
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Response_Data">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Health</td>
+<td>string</td>
+<td>"healthy" if tick rate is above ten ticks per second, "slow" otherwise
+</td></tr>
+<tr>
+<td>ServerCustomData</td>
+<td>string</td>
+<td>Custom Data passed from the Dedicated Server to the Game Client or Third Party service. Vanilla Dedicated Server returns empty string
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="VerifyAuthentication_Token">VerifyAuthentication Token</span></h2>
+<h3><span class="mw-headline" id="Summary_2">Summary</span></h3>
+<p>Verifies the Authentication token provided to the Dedicated Server API. Returns No Content if the provided token is valid.
+This function does not require input parameters and does not return any data.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="PasswordlessLogin">PasswordlessLogin</span></h2>
+<h3><span class="mw-headline" id="Summary_3">Summary</span></h3>
+<p>Attempts to perform a passwordless login to the Dedicated Server as a player. Passwordless login is possible if the Dedicated Server is not claimed,
+or if Client Protection Password is not set for the Dedicated Server.
+This function requires no Authentication.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_2">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>MinimumPrivilegeLevel</td>
+<td>string</td>
+<td>Minimum privilege level to attempt to acquire by logging in. See Privilege Level enum for possible values
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Response_Data_2">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>authenticationToken</td>
+<td>string</td>
+<td>Authentication Token in case login is successful
+</td></tr></tbody></table>
+<p><b>Community Note</b>: In the official documentation, the property name is <code>AuthenticationToken</code> with an uppercase A, but this is incorrect. The server responds with the property name with a lowercase A.
+</p>
+<h3><span class="mw-headline" id="Possible_Errors">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>passwordless_login_not_possible</td>
+<td>Passwordless login is not currently possible for this Dedicated Server
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="PasswordLogin">PasswordLogin</span></h2>
+<h3><span class="mw-headline" id="Summary_4">Summary</span></h3>
+<p>Attempts to log in to the Dedicated Server as a player using either Admin Password or Client Protection Password.
+This function requires no Authentication.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_3">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>MinimumPrivilegeLevel</td>
+<td>string</td>
+<td>Minimum privilege level to attempt to acquire by logging in. See Privilege Level enum for possible values
+</td></tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Password to attempt to log in with, in plaintext
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Response_Data_3">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>AuthenticationToken</td>
+<td>string</td>
+<td>Authentication Token in case login is successful
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_2">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>wrong_password</td>
+<td>Provided Password did not match any of the passwords set for this Dedicated Server
+</td></tr></tbody></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="QueryServerState">QueryServerState</span></h2>
+<h3><span class="mw-headline" id="Summary_5">Summary</span></h3>
+<p>Retrieves the current state of the Dedicated Server. Does not require any input parameters.
+</p>
+<h3><span class="mw-headline" id="Function_Response_Data_4">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ServerGameState</td>
+<td>string</td>
+<td>Current game state of the server
+</td></tr></tbody></table>
+<p><b>Community Note</b>: It's obviously not a string. Ignore that. Also it's <code>serverGameState</code>, with a lowercase 's'
+</p>
+<h3><span class="mw-headline" id="ServerGameState">ServerGameState</span></h3>
+<table class="wikitable">
+<caption>ServerGameState
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ActiveSessionName</td>
+<td>string</td>
+<td>Name of the currently loaded game session
+</td></tr>
+<tr>
+<td>NumConnectedPlayers</td>
+<td>integer</td>
+<td>Number of the players currently connected to the Dedicated Server
+</td></tr>
+<tr>
+<td>PlayerLimit</td>
+<td>integer</td>
+<td>Maximum number of players that can be connected to the Dedicated Server
+</td></tr>
+<tr>
+<td>TechTier</td>
+<td>integer</td>
+<td>Maximum Tech Tier of all Schematics currently unlocked
+</td></tr>
+<tr>
+<td>ActiveSchematic</td>
+<td>string</td>
+<td>Schematic currently set as Active Milestone
+</td></tr>
+<tr>
+<td>GamePhase</td>
+<td>string</td>
+<td>Current game phase. None if no game is running
+</td></tr>
+<tr>
+<td>IsGameRunning</td>
+<td>boolean</td>
+<td>True if the save is currently loaded, false if the server is waiting for the session to be created
+</td></tr>
+<tr>
+<td>TotalGameDuration</td>
+<td>integer</td>
+<td>Total time the current save has been loaded, in seconds
+</td></tr>
+<tr>
+<td>IsGamePaused</td>
+<td>boolean</td>
+<td>True if the game is paused. If the game is paused, total game duration does not increase
+</td></tr>
+<tr>
+<td>AverageTickRate</td>
+<td>float</td>
+<td>Average tick rate of the server, in ticks per second
+</td></tr>
+<tr>
+<td>AutoLoadSessionName</td>
+<td>string</td>
+<td>Name of the session that will be loaded when the server starts automatically
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Community_Notes">Community Notes</span></h3>
+<p>The first letter of all of the keys above for ServerGameState should be lowercase.
+</p>
+<table class="wikitable">
+<caption style="text-align:left">GamePhase
+</caption>
+<tbody><tr>
+<th>Property Value</th>
+<th>Phase Number</th>
+<th>Description
+</th></tr>
+<tr>
+<td>/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_1.GP_Project_Assembly_Phase_1'
+</td>
+<td>Phase 1
+</td>
+<td>Distribution Platform
+</td></tr>
+<tr>
+<td>/Script/FactoryGame.FGGamePhase'/Game/FactoryGame/GamePhases/GP_Project_Assembly_Phase_2.GP_Project_Assembly_Phase_2'</td>
+<td>Phase 2</td>
+<td>Construction Dock
+</td></tr></tbody></table>
+<p>Other phase names probably follow the same format. See <a href="/wiki/Space_Elevator#Project_Assembly_phases" title="Space Elevator">Space_Elevator#Project_Assembly_phases</a>
+</p>
+<table class="wikitable">
+<caption style="text-align:left">ActiveSchematic
+</caption>
+<tbody><tr>
+<th>Property Value</th>
+<th>Description</th>
+<th>Tier
+</th></tr>
+<tr>
+<td>/Script/Engine.BlueprintGeneratedClass'/Game/FactoryGame/Schematics/Progression/Schematic_6-7.Schematic_6-7_C'</td>
+<td>Railway Signalling</td>
+<td>6
+</td></tr>
+<tr>
+<td>/Script/Engine.BlueprintGeneratedClass'/Game/FactoryGame/Schematics/Progression/Schematic_7-2.Schematic_7-2_C'</td>
+<td>Logistics Mk.5</td>
+<td rowspan="1">7
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="GetServerOptions">GetServerOptions</span></h2>
+<h3><span class="mw-headline" id="Summary_6">Summary</span></h3>
+<p>Retrieves currently applied server options and server options that are still pending application (because of needing session or server restart)
+Does not require input parameters.
+</p>
+<h3><span class="mw-headline" id="Function_Response_Data_5">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ServerOptions</td>
+<td>map&lt;string, string&gt;</td>
+<td>All current server option values. Key is the name of the option, and value is its stringified value
+</td></tr>
+<tr>
+<td>PendingServerOptions</td>
+<td>map&lt;string, string&gt;</td>
+<td>Server option values that will be applied when the session or server restarts
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="GetAdvancedGameSettings">GetAdvancedGameSettings</span></h2>
+<h3><span class="mw-headline" id="Summary_7">Summary</span></h3>
+<p>Retrieves currently applied advanced game settings. Does not require input parameters.
+</p>
+<h3><span class="mw-headline" id="Function_Response_Data_6">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>CreativeModeEnabled</td>
+<td>boolean</td>
+<td>True if Advanced Game Settings are enabled for the currently loaded session
+</td></tr>
+<tr>
+<td>AdvancedGameSettings</td>
+<td>map&lt;string, string&gt;</td>
+<td>Values of Advanced Game Settings. Key is the name of the setting, and value is its stringified value
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="ApplyAdvancedGameSettings">ApplyAdvancedGameSettings</span></h2>
+<h3><span class="mw-headline" id="Summary_8">Summary</span></h3>
+<p>Applies new values to the provided Advanced Game Settings properties. Will automatically enable Advanced Game Settings for the currently loaded save if they are not enabled already.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_4">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>AppliedAdvancedGameSettings</td>
+<td>map&lt;string, string&gt;</td>
+<td>Key is the name of the Advanced Game Setting, and the Value is the new setting value as string
+</td></tr></tbody></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="ClaimServer">ClaimServer</span></h2>
+<h3><span class="mw-headline" id="Summary_9">Summary</span></h3>
+<p>Claims this Dedicated Server if it is not claimed. Requires InitialAdmin privilege level, which can only be acquired by attempting passwordless login
+while the server does not have an Admin Password set, e.g. it is not claimed yet.
+Function does not return any data in case of success, and the server is claimed. The client should drop InitialAdmin privileges after that
+and use returned AuthenticationToken instead, and update it's cached server game state by calling QueryServerState.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_5">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ServerName</td>
+<td>string</td>
+<td>New name of the Dedicated Server
+</td></tr>
+<tr>
+<td>AdminPassword</td>
+<td>string</td>
+<td>Admin Password to set on the Dedicated Server, in plaintext
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Response_Data_7">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>authenticationToken</td>
+<td>string</td>
+<td>New Authentication Token that the Caller should use to drop Initial Admin privileges
+</td></tr></tbody></table>
+<p><b>Community Note</b>: In the official documentation, the property name is <code>AuthenticationToken</code> with an uppercase A, but this is incorrect. The server responds with the property name with a lowercase A.
+</p>
+<h3><span class="mw-headline" id="Possible_Errors_3">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>server_claimed</td>
+<td>Server has already been claimed
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="RenameServer">RenameServer</span></h2>
+<h3><span class="mw-headline" id="Summary_10">Summary</span></h3>
+<p>Renames the Dedicated Server once it has been claimed. Requires Admin privileges.
+Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_6">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>ServerName</td>
+<td>string</td>
+<td>New name of the Dedicated Server
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_4">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>server_not_claimed</td>
+<td>Server has not been claimed yet. Use ClaimServer function instead
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="SetClientPassword">SetClientPassword</span></h2>
+<h3><span class="mw-headline" id="Summary_11">Summary</span></h3>
+<p>Updates the currently set Client Protection Password. This will invalidate all previously issued Client authentication tokens.
+Pass empty string to remove the password, and let anyone join the server as Client.
+Requres Admin privileges. Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_7">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Client Password to set on the Dedicated Server, in plaintext
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_5">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>server_not_claimed</td>
+<td>Server has not been claimed yet. Use ClaimServer function instead before calling SetClientPassword
+</td></tr>
+<tr>
+<td>password_in_use</td>
+<td>Same password is already used as Admin Password
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="SetAdminPassword">SetAdminPassword</span></h2>
+<h3><span class="mw-headline" id="Summary_12">Summary</span></h3>
+<p>Updates the currently set Admin Password. This will invalidate all previously issued Client and Admin authentication tokens.
+Requires Admin privileges. Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_8">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Password</td>
+<td>string</td>
+<td>Admin Password to set on the Dedicated Server, in plaintext
+</td></tr>
+<tr>
+<td>AuthenticationToken</td>
+<td>string</td>
+<td>New Admin authentication token to use, since the token used for this request will become invalidated
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_6">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>server_not_claimed</td>
+<td>Server has not been claimed yet. Use ClaimServer function instead
+</td></tr>
+<tr>
+<td>cannot_reset_admin_password</td>
+<td>Attempt to set Password to empty string. Admin Password cannot be reset
+</td></tr>
+<tr>
+<td>password_in_use</td>
+<td>Same password is already used as Client Protection Password
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="SetAutoLoadSessionName">SetAutoLoadSessionName</span></h2>
+<h3><span class="mw-headline" id="Summary_13">Summary</span></h3>
+<p>Updates the name of the session that the Dedicated Server will automatically load on startup. Does not change currently loaded session.
+Requires Admin privileges. Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_9">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SessionName</td>
+<td>string</td>
+<td>Name of the session to automatically load on Dedicated Server startup
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Run_Command">Run Command</span></h2>
+<h3><span class="mw-headline" id="Summary_14">Summary</span></h3>
+<p>Runs the given Console Command on the Dedicated Server, and returns it's output to the Console. Requires Admin privileges.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_10">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Command</td>
+<td>string</td>
+<td>Command Line to run on the Dedicated Server
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Response_Data_8">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>CommandResult</td>
+<td>string</td>
+<td>Output of the command executed, with \n used as line separator
+</td></tr>
+<tr>
+<td>ReturnValue</td>
+<td>boolean</td>
+<td>Whether the command executed successfully
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Shutdown">Shutdown</span></h2>
+<h3><span class="mw-headline" id="Summary_15">Summary</span></h3>
+<p>Shuts down the Dedicated Server. If automatic restart script is setup, this allows restarting the server to apply new settings or update.
+Requires Admin privileges. Shutdowns initiated by remote hosts are logged with their IP and their token.
+Function does not return any data on success, and does not take any parameters.
+</p>
+<h2><span class="mw-headline" id="ApplyServerOptions">ApplyServerOptions</span></h2>
+<h3><span class="mw-headline" id="Summary_16">Summary</span></h3>
+<p>Applies new Server Options to the Dedicated Server. Requires Admin privileges.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_11">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>UpdatedServerOptions</td>
+<td>map&lt;string, string&gt;</td>
+<td>Key is the name of the Server Option, and the Value is the new value as string
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="CreateNewGame">CreateNewGame</span></h2>
+<h3><span class="mw-headline" id="Summary_17">Summary</span></h3>
+<p>Creates a new session on the Dedicated Server, and immediately loads it. HTTPS API becomes temporarily unavailable when map loading is in progress   |
+Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_12">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>NewGameData</td>
+<td>ServerNewGameData</td>
+<td>Parameters needed to create new game session
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="ServerNewGameData">ServerNewGameData</span></h3>
+<table class="wikitable">
+<caption>ServerNewGameData
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SessionName</td>
+<td>string</td>
+<td>Name of the session to create
+</td></tr>
+<tr>
+<td>MapName</td>
+<td>string</td>
+<td>Path Name to the Map Package to use as a map. If not specified, default level
+</td></tr>
+<tr>
+<td>StartingLocation</td>
+<td>string</td>
+<td>Name of the starting location to use. Leaving it empty will use random starting location
+</td></tr>
+<tr>
+<td>SkipOnboarding</td>
+<td>boolean</td>
+<td>Whether the Onboarding should be skipped. Currently, Onboarding is always skipped on the Dedicated Servers
+</td></tr>
+<tr>
+<td>AdvancedGameSettings</td>
+<td>map&lt;string, string&gt;</td>
+<td>Advanced Game Settings to apply to the newly created session
+</td></tr>
+<tr>
+<td>CustomOptionsOnlyForModding</td>
+<td>map&lt;string, string&gt;</td>
+<td>Custom Options to pass to the newly created session URL. Not used by vanilla Dedicated Servers
+</td></tr></tbody></table>
+<h5><span class="mw-headline" id="Note">Note</span></h5>
+<p>Currently SkipOnboarding must be set to bSkipOnboarding, due to an issue with the property names.
+</p>
+<h2><span class="mw-headline" id="SaveGame">SaveGame</span></h2>
+<h3><span class="mw-headline" id="Summary_18">Summary</span></h3>
+<p>Saves the currently loaded session into the new save game file named as the argument.
+Requires Admin privileges. SaveName might be changed to satisfy file system restrictions on file names.
+Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_13">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file to create. Passed name might be sanitized
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_7">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>save_game_failed</td>
+<td>Failed to save the game. Additional information might be available in errorMessage property
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="DeleteSaveFile">DeleteSaveFile</span></h2>
+<h3><span class="mw-headline" id="Summary_19">Summary</span></h3>
+<p>Deletes the existing save game file from the server. Requires Admin privileges. SaveName might be changed to satisfy file system
+restrictions on file names. Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_14">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file to delete. Passed name might be sanitized
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_8">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>delete_save_file_failed</td>
+<td>Failed to delete the save game file. Additional information might be available in errorMessage property
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="DeleteSaveSession">DeleteSaveSession</span></h2>
+<h3><span class="mw-headline" id="Summary_20">Summary</span></h3>
+<p>Deletes all save files belonging to the specific session name. Requires Admin privileges. SessionName must be
+a valid session name with at least one saved save game file belonging to it.
+Function does not return any data on success.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_15">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SessionName</td>
+<td>string</td>
+<td>Name of the save session to delete
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_9">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>session_not_found</td>
+<td>Failed to find any save game files belonging to the given session
+</td></tr>
+<tr>
+<td>delete_save_session_failed</td>
+<td>Failed to delete save session files. Additional information might be available in errorMessage property
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="EnumerateSessions">EnumerateSessions</span></h2>
+<h3><span class="mw-headline" id="Summary_21">Summary</span></h3>
+<p>Enumerates all save game files available on the Dedicated Server. Requires Admin privileges. Function does not require any additional parameters.
+</p>
+<h3><span class="mw-headline" id="Function_Response_Data_9">Function Response Data</span></h3>
+<table class="wikitable">
+<caption>Function Response Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Sessions</td>
+<td>array&lt;SessionSaveStruct&gt;</td>
+<td>List of sessions available on the Dedicated Server
+</td></tr>
+<tr>
+<td>CurrentSessionIndex</td>
+<td>integer</td>
+<td>Index of the currently selected session in the list
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_10">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>enumerate_sessions_failed</td>
+<td>Failed to enumerate save sessions. Additional information might be available in errorMessage property
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="SessionSaveStruct">SessionSaveStruct</span></h3>
+<table class="wikitable">
+<caption>SessionSaveStruct
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SessionName</td>
+<td>string</td>
+<td>Name of the save session
+</td></tr>
+<tr>
+<td>SaveHeaders</td>
+<td>array&lt;SaveHeader&gt;</td>
+<td>All save game files belonging to this session
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="SaveHeader">SaveHeader</span></h3>
+<table class="wikitable">
+<caption>SaveHeader
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveVersion</td>
+<td>integer</td>
+<td>Version of the Save Game format this file was saved with
+</td></tr>
+<tr>
+<td>BuildVersion</td>
+<td>integer</td>
+<td>Changelist of the game or dedicated server this file was saved by
+</td></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file in the filesystem
+</td></tr>
+<tr>
+<td>MapName</td>
+<td>string</td>
+<td>Path to the map package this save game file is based on
+</td></tr>
+<tr>
+<td>MapOptions</td>
+<td>string</td>
+<td>Additional Map URL options this save game was saved with
+</td></tr>
+<tr>
+<td>SessionName</td>
+<td>string</td>
+<td>Name of the session this save game file belongs to
+</td></tr>
+<tr>
+<td>PlayDurationSeconds</td>
+<td>integer</td>
+<td>Amount of seconds the game has been running for in total since the session was created
+</td></tr>
+<tr>
+<td>SaveDateTime</td>
+<td>string</td>
+<td>Date and time on which the save game file was saved
+</td></tr>
+<tr>
+<td>IsModdedSave</td>
+<td>boolean</td>
+<td>True if this save game file was saved with mods
+</td></tr>
+<tr>
+<td>IsEditedSave</td>
+<td>boolean</td>
+<td>True if this save game file has been edited by third party tools
+</td></tr>
+<tr>
+<td>IsCreativeModeEnabled</td>
+<td>boolean</td>
+<td>True if Advanced Game Settings are enabled for this save game
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="LoadGame">LoadGame</span></h2>
+<h3><span class="mw-headline" id="Summary_22">Summary</span></h3>
+<p>Loads the save game file by name, optionally with Advanced Game Settings enabled. Requires Admin privileges.
+Dedicated Server HTTPS API will become temporarily unavailable when save game is being loaded.
+Function does not return any data on succcess.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_16">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file to load
+</td></tr>
+<tr>
+<td>EnableAdvancedGameSettings</td>
+<td>boolean</td>
+<td>True if save game file should be loaded with Advanced Game Settings enabled
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_11">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>save_game_load_failed</td>
+<td>Failed to find the save game file with the given name on the Dedicated Server
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="UploadSaveGame">UploadSaveGame</span></h2>
+<h3><span class="mw-headline" id="Summary_23">Summary</span></h3>
+<p>Uploads save game file to the Dedicated Server with the given name, and optionally immediately loads it.
+Requires Admin privileges. If save file is immediately loaded, Dedicated Server HTTPS API will become temporarily unavailable until save game is loaded.
+This function does not return any data on success.
+</p><p>This function requires multipart-encoded form data as it's body. The following multipart part names are allowed:
+</p>
+<h3><span class="mw-headline" id="Multipart_Field">Multipart Field</span></h3>
+<table class="wikitable">
+<caption>Multipart Field
+</caption>
+<tbody><tr>
+<th>Multipart Field</th>
+<th>Description
+</th></tr>
+<tr>
+<td>data</td>
+<td>Standard Request Data body for this request, encoded as utf-8 JSON. Note that this includes the envelope
+</td></tr>
+<tr>
+<td>saveGameFile</td>
+<td>File attachment containing the save game file. Contents of the file will be validated on the server
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Function_Request_Data_17">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file to create on the Dedicated Server
+</td></tr>
+<tr>
+<td>LoadSaveGame</td>
+<td>boolean</td>
+<td>True if save game file should be immediately loaded by the Dedicated Server
+</td></tr>
+<tr>
+<td>EnableAdvancedGameSettings</td>
+<td>boolean</td>
+<td>True if save game file should be loaded with Advanced Game Settings enabled
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_12">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>invalid_save_game</td>
+<td>Invalid save game file encoding, malformed header or corrupted contents
+</td></tr>
+<tr>
+<td>unsupported_save_game</td>
+<td>Save game file is too old to be loaded by the Dedicated Server, or is too new
+</td></tr>
+<tr>
+<td>file_save_failed</td>
+<td>Failed to save the save game file to the underlying file system
+</td></tr>
+<tr>
+<td>save_game_load_failed</td>
+<td>Failed to find the created save game file
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="DownloadSaveGame">DownloadSaveGame</span></h2>
+<h3><span class="mw-headline" id="Summary_24">Summary</span></h3>
+<p>Downloads save game with the given name from the Dedicated Server. Requires Admin privileges.
+This function responds with the file attachment containing the save game file on success, and with normal error response in case of error.
+</p>
+<h3><span class="mw-headline" id="Function_Request_Data_18">Function Request Data</span></h3>
+<table class="wikitable">
+<caption>Function Request Data
+</caption>
+<tbody><tr>
+<th>Property Name</th>
+<th>Property Type</th>
+<th>Description
+</th></tr>
+<tr>
+<td>SaveName</td>
+<td>string</td>
+<td>Name of the save game file to download from the Dedicated Server
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Possible_Errors_13">Possible Errors</span></h3>
+<table class="wikitable">
+<caption>Possible Errors
+</caption>
+<tbody><tr>
+<th>Error Code</th>
+<th>Description
+</th></tr>
+<tr>
+<td>file_not_found</td>
+<td>Save game file with the provided name is not found on the Dedicated Server
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/wiki/Dedicated_servers" title="Dedicated servers">Dedicated Servers - Main Page</a></li>
+<li><a href="/wiki/Dedicated_servers/Configuration_files" title="Dedicated servers/Configuration files">Dedicated Servers - Configuration Files</a></li>
+<li><a href="/wiki/Dedicated_servers/Running_as_a_Service" title="Dedicated servers/Running as a Service">Dedicated Servers - Running as a Service</a></li>
+<li><a href="/wiki/Dedicated_servers/Automatic_updates" title="Dedicated servers/Automatic updates">Dedicated Servers - Automatic Updates</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250628153839
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.120 seconds
+Real time usage: 0.538 seconds
+Preprocessor visited node count: 330/1000000
+Revision size: 34645/4194304 bytes
+Post‐expand include size: 72/4194304 bytes
+Template argument size: 0/4194304 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 2/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1433/10000000 bytes
+ExtLoops count: 0/5000
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.005      1 Template:Tocright
+100.00%    2.005      1 -total
+-->
+
+<!-- Saved in parser cache with key satisfactory_en:pcache:idhash:7841-0!canonical and timestamp 20250628153839 and revision id 55292. Rendering was triggered because: page-view
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API?oldid=55292">https://satisfactory.wiki.gg/wiki/Dedicated_servers/HTTPS_API?oldid=55292</a>"</div></div>
+					<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+				</div>
+			</main>
+			<aside id="wikigg-sl-rail" data-mw="WggShowcaseLayout">
+        <div
+            class="wikigg-showcase__unit wikigg-showcase__reserved--mrec"
+            data-wgg-unit-type="pubco"
+        ><div id="nn_mpu1"></div></div>
+        <div
+            class="wikigg-showcase__unit wikigg-showcase__reserved--mrec"
+            data-wgg-unit-type="internal"
+        ></div>
+        <div
+            class="wikigg-showcase__unit wikigg-showcase__reserved--mrec"
+            data-wgg-unit-type="pubco"
+        ><div id="nn_mpu2"></div></div>
+        <div class="wikigg-showcase__report-link">
+            <a href="https://www.wiki.gg/t/bad-ad" target="_blank" rel="nofollow">Report bad advertisement</a>
+        </div>
+</aside>
+
+		</div>
+		<aside id="wikigg-sl-footer" data-mw="WggShowcaseLayout">
+        <div
+            class="wikigg-showcase__unit wikigg-showcase__reserved--lb"
+            data-wgg-unit-type="internal"
+        ></div>
+</aside>
+
+	</div>
+</div>
+<div id='mw-data-after-content'>
+	<div class="mw-cookiewarning-container"><div class="mw-cookiewarning-text"><span>Cookies help us deliver our services. By using our services, you agree to our use of cookies.</span></div><form method="POST"><div class='oo-ui-layout oo-ui-horizontalLayout'><span class='oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-progressive oo-ui-buttonWidget'><a role='button' tabindex='0' href='https://www.indie.io/privacy-policy' rel='nofollow' class='oo-ui-buttonElement-button'><span class='oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-progressive'></span><span class='oo-ui-labelElement-label'>More information</span><span class='oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-progressive'></span></a></span><span class='oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive oo-ui-buttonInputWidget'><button type='submit' tabindex='0' name='disablecookiewarning' value='OK' class='oo-ui-inputWidget-input oo-ui-buttonElement-button'><span class='oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert'></span><span class='oo-ui-labelElement-label'>OK</span><span class='oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert'></span></button></span></div></form></div>
+</div>
+
+
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 9 October 2024, at 22:12.</li>
+	<li id="footer-info-copyright"><div class="wikigg-copyright-box">Pages that were created prior to March 2023 are adapted from the Satisfactory Fandom wiki.<br />Page content is under <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0">Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 License</a> unless otherwise noted.</div></li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-wikigg-tos"><a href="https://www.indie.io/terms-of-service">Terms of Service</a></li>
+	<li id="footer-places-wikigg-privacy"><a href="https://www.indie.io/privacy-policy">Privacy policy</a></li>
+	<li id="footer-places-wikigg-support"><a href="https://support.wiki.gg">Support Wiki</a></li>
+	<li id="footer-places-wikigg-servicedesk"><a href="https://wiki.gg/go/servicedesk">Send a ticket to wiki.gg</a></li>
+	<li id="footer-places-wikigg-statuspage"><a href="https://wikiggstatus.com">Status page</a></li>
+	<li id="footer-places-wikigg-pcmp"><a href="#" class="nn-cmp-show" style="display: none">Manage cookie settings</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="https://commons.wiki.gg/images/a/a3/CC-BY-NC-SA_footer_badge.svg?10811f" alt="Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 License" height="31" width="88" loading="lazy" data-theme="light"><img src="https://commons.wiki.gg/images/d/d6/CC-BY-NC-SA_footer_badge_dark.svg?9da380" alt="Creative Commons Attribution-Non-Commercial-ShareAlike 4.0 License" height="31" width="88" loading="lazy" data-theme="dark"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/mw-1.43/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy" data-theme="light"><img src="https://commons.wiki.gg/images/1/1c/MediaWiki_footer_badge_dark.svg?12ec0a" alt="Powered by MediaWiki" width="88" height="31" loading="lazy" data-theme="dark"></a></li>
+	<li id="footer-partofico"><a href="https://wiki.gg" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="https://commons.wiki.gg/images/d/d1/Network_footer_badge.svg?9d5a96" alt="Part of wiki.gg" height="31" width="88" loading="lazy" data-theme="light"><img src="https://commons.wiki.gg/images/2/23/Network_footer_badge_dark.svg?9cf3e8" alt="Part of wiki.gg" height="31" width="88" loading="lazy" data-theme="dark"></a></li>
+</ul>
+
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":219,"wgPageParseReport":{"limitreport":{"cputime":"0.120","walltime":"0.538","ppvisitednodes":{"value":330,"limit":1000000},"revisionsize":{"value":34645,"limit":4194304},"postexpandincludesize":{"value":72,"limit":4194304},"templateargumentsize":{"value":0,"limit":4194304},"expansiondepth":{"value":3,"limit":100},"expensivefunctioncount":{"value":2,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1433,"limit":10000000},"timingprofile":["100.00%    2.005      1 Template:Tocright","100.00%    2.005      1 -total"]},"loops":{"limitreport-count-limited":{"value":0,"limit":5000}},"cachereport":{"timestamp":"20250628153839","ttl":2592000,"transientcontent":false}}});});</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9698579fdb5a97a6',t:'MTc1NDI1MDYwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
