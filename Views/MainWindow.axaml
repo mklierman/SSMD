@@ -3,12 +3,13 @@
         xmlns:vm="using:SSMD.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        mc:Ignorable="d" d:DesignWidth="1400" d:DesignHeight="900"
         x:Class="SSMD.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        x:Name="MainWindowControl"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SSMD"
-        Width="1200" Height="800"
+        Title="SSMD - Satisfactory Server Manager"
+        Width="1400" Height="900"
         WindowStartupLocation="CenterScreen">
 
     <Design.DataContext>
@@ -23,207 +24,345 @@
 
         <!-- Header -->
         <Border Grid.Row="0" Background="{DynamicResource SystemAccentColor}" Padding="20">
-            <StackPanel>
-                <TextBlock Text="🏭 SSMD" 
-                           FontSize="24" FontWeight="Bold" 
-                           Foreground="White" HorizontalAlignment="Center"/>
-                <TextBlock Text="{Binding StatusMessage}" 
-                           FontSize="14" Foreground="White" 
-                           HorizontalAlignment="Center" Margin="0,5,0,0"/>
-            </StackPanel>
+            <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="🏭 Satisfactory Server Manager Desktop" 
+                               FontSize="28" FontWeight="Bold" 
+                               Foreground="White" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding StatusMessage}" 
+                               FontSize="12" Foreground="White" 
+                               HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <!-- Main Content -->
-        <ScrollViewer Grid.Row="1" Padding="20">
-            <StackPanel>
-                
-                <!-- Connection Settings -->
-                <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
-                        CornerRadius="8" Padding="20" Margin="0,0,0,20">
-                    <StackPanel>
-                        <TextBlock Text="🔌 Server Connection" 
-                                   FontSize="18" FontWeight="Bold" 
-                                   Margin="0,0,0,10"/>
-                        
-                        <Grid ColumnDefinitions="*,*,*,Auto">
-                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                                <TextBlock Text="Server IP" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBox Text="{Binding ServerConfig.ServerIp}" 
-                                         Watermark="127.0.0.1" Margin="0,0,0,10"/>
-                            </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="450"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Panel - Connection & Server Info -->
+            <ScrollViewer Grid.Column="0" Padding="20">
+                <StackPanel Margin="0,0,20,0">
+                    
+                    <!-- Connection Settings -->
+                    <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                            CornerRadius="10" Padding="20" Margin="0,0,0,20">
+                        <StackPanel>
+                            <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,15">
+                                <TextBlock Grid.Column="0" Text="🔌" FontSize="20" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="Server Connection" 
+                                           FontSize="18" FontWeight="Bold" 
+                                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Grid>
                             
-                            <StackPanel Grid.Column="1" Margin="0,0,10,0">
-                                <TextBlock Text="Port" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBox Text="{Binding ServerConfig.ServerPort}" 
-                                         Watermark="7777" Margin="0,0,0,10"/>
-                            </StackPanel>
-                            
-                            <StackPanel Grid.Column="2" Margin="0,0,10,0">
-                                <TextBlock Text="Application Token (Recommended)" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBox Text="{Binding ServerConfig.ApplicationToken}" 
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Server IP" FontSize="12" Margin="0,0,0,5"/>
+                                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ServerConfig.ServerIp}" 
+                                         Watermark="127.0.0.1" Margin="0,0,10,10"/>
+                                
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="Port" FontSize="12" Margin="0,0,0,5"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ServerConfig.ServerPort}" 
+                                         Watermark="7777" Width="80" Margin="0,0,0,10"/>
+                                
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Application Token" FontSize="12" Margin="0,0,0,5"/>
+                                <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding ServerConfig.ApplicationToken}" 
                                          PasswordChar="*" Watermark="Generate with: server.GenerateAPIToken" 
-                                         Margin="0,0,0,5"/>
-                                <TextBlock Text="Password (Legacy)" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBox Text="{Binding ServerConfig.Password}" 
-                                         PasswordChar="*" Watermark="Legacy authentication" 
                                          Margin="0,0,0,10"/>
-                            </StackPanel>
+                            </Grid>
                             
-                            <StackPanel Grid.Column="3" VerticalAlignment="Bottom">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button Content="Test Connection" 
                                         Command="{Binding TestConnectionCommand}" 
-                                        IsEnabled="{Binding !IsLoading}" 
-                                        Margin="0,5,10,5"/>
+                                        IsEnabled="{Binding !IsConnecting}" 
+                                        Margin="0,0,10,0" Padding="15,8"/>
                                 <Button Content="Connect" 
                                         Command="{Binding ConnectCommand}" 
-                                        IsEnabled="{Binding !IsLoading}" 
-                                        Margin="0,5,10,5"/>
+                                        IsEnabled="{Binding !IsConnecting}" 
+                                        Margin="0,0,10,0" Padding="15,8"/>
                                 <Button Content="Disconnect" 
                                         Command="{Binding DisconnectCommand}" 
                                         IsEnabled="{Binding IsConnected}" 
-                                        Margin="0,5,10,5"/>
+                                        Padding="15,8"/>
                             </StackPanel>
-                        </Grid>
-                    </StackPanel>
-                </Border>
-
-                <!-- Server Status -->
-                <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
-                        CornerRadius="8" Padding="20" Margin="0,0,0,20"
-                        IsVisible="{Binding IsConnected}">
-                    <StackPanel>
-                        <TextBlock Text="📊 Server Status" 
-                                   FontSize="18" FontWeight="Bold" 
-                                   Margin="0,0,0,10"/>
-                        
-                        <Grid ColumnDefinitions="*,*" IsVisible="{Binding CurrentServerState, Converter={x:Static ObjectConverters.IsNotNull}}">
-                            <StackPanel Grid.Column="0" Margin="0,0,20,0">
-                                <TextBlock Text="Session Name" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.ActiveSessionName}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Players" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.NumConnectedPlayers}/{Binding CurrentServerState.PlayerLimit}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Tech Tier" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.TechTier}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Game Phase" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.GamePhase}" FontSize="12" Margin="0,0,0,10"/>
-                            </StackPanel>
-                            
-                            <StackPanel Grid.Column="1">
-                                <TextBlock Text="Game Running" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.IsGameRunning}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Game Paused" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.IsGamePaused}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Tick Rate" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.AverageTickRate, StringFormat='{}{0:F1} TPS'}" FontSize="12" Margin="0,0,0,10"/>
-                                
-                                <TextBlock Text="Total Duration" FontSize="12" Margin="0,0,0,5"/>
-                                <TextBlock Text="{Binding CurrentServerState.TotalGameDuration, StringFormat='{}{0} seconds'}" FontSize="12" Margin="0,0,0,10"/>
-                            </StackPanel>
-                        </Grid>
-                        
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <Button Content="Refresh Status" 
-                                    Command="{Binding RefreshServerStateCommand}" 
-                                    Margin="0,5,10,5"/>
-                            <Button Content="Save Game" 
-                                    Command="{Binding SaveGameCommand}" 
-                                    Margin="0,5,10,5"/>
-                            <Button Content="Shutdown Server" 
-                                    Command="{Binding ShutdownServerCommand}" 
-                                    Margin="0,5,10,5"/>
                         </StackPanel>
-                    </StackPanel>
-                </Border>
+                    </Border>
 
-                <!-- Command Console -->
-                <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
-                        CornerRadius="8" Padding="20" Margin="0,0,0,20"
-                        IsVisible="{Binding IsConnected}">
-                    <StackPanel>
-                        <TextBlock Text="💻 Command Console" 
-                                   FontSize="18" FontWeight="Bold" 
-                                   Margin="0,0,0,10"/>
-                        
-                        <Grid ColumnDefinitions="*,Auto">
-                            <TextBox Grid.Column="0" Text="{Binding CommandInput}" 
-                                     Watermark="Enter server command..."
-                                     AcceptsReturn="False" Margin="0,0,10,0"/>
-                            <Button Grid.Column="1" Content="Run Command" 
-                                    Command="{Binding RunCommandCommand}" 
-                                    VerticalAlignment="Bottom"/>
-                        </Grid>
-                        
-                        <TextBlock Text="Command Output" FontSize="12" Margin="0,10,0,5"/>
-                        <TextBox Text="{Binding CommandOutput}" 
-                                 AcceptsReturn="True" IsReadOnly="True" 
-                                 Height="150" FontFamily="Consolas"/>
-                    </StackPanel>
-                </Border>
+                    <!-- Server Status -->
+                    <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                            CornerRadius="10" Padding="20" Margin="0,0,0,20"
+                            IsVisible="{Binding IsConnected}">
+                        <StackPanel>
+                            <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,15">
+                                <TextBlock Grid.Column="0" Text="📊" FontSize="20" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="Server Status" 
+                                           FontSize="18" FontWeight="Bold" 
+                                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Grid>
+                            
+                            <Grid ColumnDefinitions="*,*" IsVisible="{Binding CurrentServerState, Converter={x:Static ObjectConverters.IsNotNull}}">
+                                <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                                    <TextBlock Text="Session Name" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.ActiveSessionName}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Players" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.NumConnectedPlayers}/{Binding CurrentServerState.PlayerLimit}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Tech Tier" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.TechTier}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Game Phase" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding FormattedGamePhase}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Active Schematic" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding FormattedActiveSchematic}" FontSize="12" Margin="0,0,0,15"/>
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Game Running" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.IsGameRunning}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Game Paused" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.IsGamePaused}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Tick Rate" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding CurrentServerState.AverageTickRate, StringFormat='{}{0:F1} TPS'}" FontSize="12" Margin="0,0,0,15"/>
+                                    
+                                    <TextBlock Text="Total Duration" FontSize="14" FontWeight="Bold" Margin="0,0,0,5"/>
+                                    <TextBlock Text="{Binding FormattedTotalDuration}" FontSize="12" Margin="0,0,0,15"/>
+                                </StackPanel>
+                            </Grid>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                                <Button Content="Refresh Status" 
+                                        Command="{Binding RefreshServerStateCommand}" 
+                                        IsEnabled="{Binding !IsConnecting}"
+                                        Margin="0,0,10,0" Padding="12,6"/>
+                                <Button Content="Save Game" 
+                                        Command="{Binding SaveGameCommand}" 
+                                        IsEnabled="{Binding !IsSaving}"
+                                        Margin="0,0,10,0" Padding="12,6"/>
+                                <Button Content="Shutdown Server" 
+                                        Command="{Binding ShutdownServerCommand}" 
+                                        IsEnabled="{Binding !IsShuttingDown}"
+                                        Padding="12,6"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
 
-                <!-- Sessions -->
-                <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
-                        CornerRadius="8" Padding="20" Margin="0,0,0,20"
-                        IsVisible="{Binding IsConnected}">
-                    <StackPanel>
-                        <Grid ColumnDefinitions="*,Auto">
-                            <TextBlock Grid.Column="0" Text="💾 Save Sessions" 
-                                       FontSize="18" FontWeight="Bold"/>
-                            <Button Grid.Column="1" Content="Refresh Sessions" 
-                                    Command="{Binding RefreshSessionsCommand}"/>
-                        </Grid>
-                        
-                        <ItemsControl ItemsSource="{Binding Sessions}" Margin="0,10,0,0">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Background="{DynamicResource SystemControlBackgroundBaseLowBrush}" 
-                                            CornerRadius="5" Padding="15" Margin="0,0,0,10">
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding SessionName}" FontWeight="Bold" FontSize="14"/>
-                                            <TextBlock Text="{Binding SaveHeaders.Count, StringFormat='{}{0} save files'}" 
-                                                       FontSize="12" Margin="0,0,0,10"/>
-                                            
-                                            <ItemsControl ItemsSource="{Binding SaveHeaders}" Margin="0,10,0,0">
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Border Background="{DynamicResource SystemControlBackgroundBaseMediumBrush}" 
-                                                                CornerRadius="3" Padding="10" Margin="0,0,0,5">
-                                                            <Grid ColumnDefinitions="*,Auto">
-                                                                <StackPanel Grid.Column="0">
-                                                                    <TextBlock Text="{Binding SaveName}" FontWeight="Medium"/>
-                                                                    <TextBlock Text="{Binding SaveDateTime}" FontSize="11" Margin="0,0,0,5"/>
-                                                                    <TextBlock Text="{Binding PlayDurationSeconds, StringFormat='{}{0} seconds played'}" 
-                                                                               FontSize="11"/>
-                                                                </StackPanel>
-                                                                <StackPanel Grid.Column="1" Orientation="Horizontal">
-                                                                    <TextBlock Text="📁" IsVisible="{Binding IsModdedSave}" FontSize="12"/>
-                                                                    <TextBlock Text="✏️" IsVisible="{Binding IsEditedSave}" FontSize="12"/>
-                                                                    <TextBlock Text="🎨" IsVisible="{Binding IsCreativeModeEnabled}" FontSize="12"/>
-                                                                </StackPanel>
-                                                            </Grid>
-                                                        </Border>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </Border>
+                </StackPanel>
+            </ScrollViewer>
 
-            </StackPanel>
-        </ScrollViewer>
+            <!-- Middle Panel - Command Console -->
+            <ScrollViewer Grid.Column="1" Padding="20">
+                <StackPanel>
+                    
+                    <!-- Command Console -->
+                    <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                            CornerRadius="10" Padding="20" Margin="0,0,0,20"
+                            IsVisible="{Binding IsConnected}">
+                        <StackPanel>
+                            <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,15">
+                                <TextBlock Grid.Column="0" Text="💻" FontSize="20" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="Command Console" 
+                                           FontSize="18" FontWeight="Bold" 
+                                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+                            </Grid>
+                            
+                            <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                                <TextBox Grid.Column="0" Text="{Binding CommandInput}" 
+                                         Watermark="Enter server command..."
+                                         AcceptsReturn="False" Margin="0,0,10,0"/>
+                                <Button Grid.Column="1" Content="Run Command" 
+                                        Command="{Binding RunCommandCommand}" 
+                                        IsEnabled="{Binding !IsRunningCommand}"
+                                        VerticalAlignment="Bottom" Padding="15,8"/>
+                            </Grid>
+                            
+                            <!-- Quick Action Buttons -->
+                            <Expander Header="Quick Actions" IsExpanded="True" Margin="0,0,0,15">
+                                <StackPanel>
+                                    <TextBlock Text="Server Management" FontSize="14" FontWeight="Medium" Margin="0,0,0,10"/>
+                                    <WrapPanel Margin="0,0,0,15">
+                                        <Button Content="Test API Token" Command="{Binding TestApiTokenCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Get Server Options" Command="{Binding GetServerOptionsCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Get Game Settings" Command="{Binding GetAdvancedGameSettingsCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Verify Auth Token" Command="{Binding VerifyAuthTokenCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                    </WrapPanel>
+                                    
+                                    <TextBlock Text="Server Configuration" FontSize="14" FontWeight="Medium" Margin="0,0,0,10"/>
+                                    <WrapPanel Margin="0,0,0,15">
+                                        <Button Content="Claim Server" Command="{Binding ClaimServerCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Rename Server" Command="{Binding RenameServerCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Set Client Password" Command="{Binding SetClientPasswordCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Set Admin Password" Command="{Binding SetAdminPasswordCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Set Auto-Load Session" Command="{Binding SetAutoLoadSessionCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                    </WrapPanel>
+                                    
+                                    <TextBlock Text="Game Management" FontSize="14" FontWeight="Medium" Margin="0,0,0,10"/>
+                                    <WrapPanel Margin="0,0,0,15">
+                                        <Button Content="Create New Game" Command="{Binding CreateNewGameCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Load Game" Command="{Binding LoadGameCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Delete Save File" Command="{Binding DeleteSaveFileCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                        <Button Content="Delete Save Session" Command="{Binding DeleteSaveSessionCommand}" 
+                                                IsEnabled="{Binding !IsRunningCommand}" Margin="0,0,10,5" Padding="10,5"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Expander>
+                            
+                            <TextBlock Text="Command Output" FontSize="12" FontWeight="Medium" Margin="0,0,0,5"/>
+                            <TextBox Text="{Binding CommandOutput}" 
+                                     AcceptsReturn="True" IsReadOnly="True" 
+                                     Height="300" FontFamily="Consolas" FontSize="11"
+                                     Background="{DynamicResource SystemControlBackgroundBaseLowBrush}"
+                                     BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                        </StackPanel>
+                    </Border>
 
-        <!-- Loading Overlay -->
-        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsLoading}">
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Right Panel - Save Sessions -->
+            <ScrollViewer Grid.Column="2" Padding="20,20,25,20">
+                <StackPanel Margin="20,0,0,0">
+                    
+                    <!-- Sessions -->
+                    <Border Background="{DynamicResource SystemControlBackgroundAltHighBrush}" 
+                            CornerRadius="10" Padding="20" Margin="0,0,0,20"
+                            IsVisible="{Binding IsConnected}">
+                        <StackPanel>
+                            <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="💾" FontSize="20" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="Save Sessions" 
+                                           FontSize="18" FontWeight="Bold" 
+                                           VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <Button Grid.Column="2" Content="Refresh" 
+                                        Command="{Binding RefreshSessionsCommand}"
+                                        IsEnabled="{Binding !IsRefreshingSessions}"
+                                        Padding="10,5"/>
+                            </Grid>
+                            
+                            <ScrollViewer Height="600" Padding="0,0,15,0">
+                                <ItemsControl ItemsSource="{Binding Sessions}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Background="{DynamicResource SystemControlBackgroundBaseLowBrush}" 
+                                                    CornerRadius="10" Padding="20" Margin="0,0,0,15"
+                                                    BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseMediumBrush}">
+                                                <StackPanel>
+                                                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+                                                        <TextBlock Grid.Column="0" Text="{Binding SessionName}" 
+                                                                   FontWeight="Bold" FontSize="16" 
+                                                                   Foreground="{DynamicResource SystemAccentColor}"/>
+                                                        <TextBlock Grid.Column="1" Text="{Binding SaveHeaders.Count, StringFormat='{}{0} saves'}" 
+                                                                   FontSize="12" FontWeight="Medium"
+                                                                   Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                                                                   VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                    
+                                                    <ItemsControl ItemsSource="{Binding SaveHeaders}" Margin="0,5,0,0">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Border Background="{DynamicResource SystemControlBackgroundAltLowBrush}" 
+                                                                        CornerRadius="8" Padding="15" Margin="0,0,0,8"
+                                                                        BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+                                                                    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                                                                        <StackPanel Grid.Column="0" Grid.Row="0">
+                                                                            <TextBlock Text="{Binding SaveName}" 
+                                                                                       FontWeight="SemiBold" FontSize="13" 
+                                                                                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                                                                                       Margin="0,0,0,4"/>
+                                                                            <TextBlock Text="{Binding SaveDateTime}" 
+                                                                                       FontSize="11" Margin="0,0,0,2" 
+                                                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"/>
+                                                                        </StackPanel>
+                                                                        
+                                                                        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" 
+                                                                                    VerticalAlignment="Top" Margin="10,0,0,0">
+                                                                            <TextBlock Text="📁" IsVisible="{Binding IsModdedSave}" 
+                                                                                       FontSize="14" ToolTip.Tip="Modded Save" Margin="0,0,3,0"/>
+                                                                            <TextBlock Text="✏️" IsVisible="{Binding IsEditedSave}" 
+                                                                                       FontSize="14" ToolTip.Tip="Edited Save" Margin="0,0,3,0"/>
+                                                                            <TextBlock Text="🎨" IsVisible="{Binding IsCreativeModeEnabled}" 
+                                                                                       FontSize="14" ToolTip.Tip="Creative Mode" Margin="0,0,3,0"/>
+                                                                        </StackPanel>
+                                                                        
+                                                                        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+                                                                                    Orientation="Horizontal" Margin="0,8,0,0">
+                                                                            <TextBlock Text="{Binding PlayDurationSeconds, StringFormat='{}{0} seconds played'}" 
+                                                                                       FontSize="11" 
+                                                                                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                                                                                       VerticalAlignment="Center"/>
+                                                                            <Button Content="Load Save" FontSize="11" Padding="12,4" 
+                                                                                    Margin="15,0,0,0" 
+                                                                                    Command="{Binding $parent[ItemsControl].((vm:MainWindowViewModel)DataContext).LoadSaveGameCommand}" 
+                                                                                    CommandParameter="{Binding SaveName}"/>
+                                                                        </StackPanel>
+                                                                    </Grid>
+                                                                </Border>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+        <!-- Loading Overlays -->
+        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsConnecting}">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Connecting..." Foreground="White" FontSize="18" HorizontalAlignment="Center"/>
+                <ProgressBar IsIndeterminate="True" Width="200" Height="4" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsRunningCommand}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Running Command..." Foreground="White" FontSize="18" HorizontalAlignment="Center"/>
+                <ProgressBar IsIndeterminate="True" Width="200" Height="4" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsSaving}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Saving Game..." Foreground="White" FontSize="18" HorizontalAlignment="Center"/>
+                <ProgressBar IsIndeterminate="True" Width="200" Height="4" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Background="#80000000" IsVisible="{Binding IsShuttingDown}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Shutting Down Server..." Foreground="White" FontSize="18" HorizontalAlignment="Center"/>
                 <ProgressBar IsIndeterminate="True" Width="200" Height="4" Margin="0,10,0,0"/>
             </StackPanel>
         </Border>

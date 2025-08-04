@@ -11,6 +11,10 @@ A C# Avalonia desktop application for managing Satisfactory dedicated servers us
 - **🛡️ Authentication**: Support for both passwordless and password-based login
 - **⚡ Real-time Updates**: Automatic refresh of server status and session information
 - **🎮 Game Control**: Save games, shutdown server, and run console commands
+- **🔒 Input Validation**: Comprehensive validation for server settings and commands
+- **🔄 Retry Logic**: Automatic retry for network operations with exponential backoff
+- **📝 Proper Logging**: Structured logging for debugging and error tracking
+- **🧹 Resource Management**: Proper disposal of network resources
 
 ## Getting Started
 
@@ -79,11 +83,13 @@ The application supports all major Satisfactory Dedicated Server API endpoints:
 ## Project Structure
 
 ```
-AvaloniaWelcomeApp/
+SSMD/
 ├── Models/
 │   └── ServerConfig.cs          # Server configuration model
 ├── Services/
-│   └── SatisfactoryApiService.cs # API client for server communication
+│   ├── SatisfactoryApiService.cs # API client for server communication
+│   ├── LoggingService.cs        # Centralized logging service
+│   └── ValidationService.cs     # Input validation utilities
 ├── ViewModels/
 │   └── MainWindowViewModel.cs    # Main application logic
 ├── Views/
@@ -98,6 +104,33 @@ AvaloniaWelcomeApp/
 - **.NET 8.0**: Latest .NET framework
 - **HttpClient**: HTTP communication with server API
 - **JSON**: Data serialization for API requests
+
+## Improvements Made
+
+### 🔧 **Resource Management**
+- **IDisposable Implementation**: Proper disposal of HttpClient and other resources
+- **Cancellation Support**: CancellationToken support for long-running operations
+- **Memory Leak Prevention**: Automatic cleanup of network resources
+
+### 🛡️ **Security & Validation**
+- **Input Validation**: Comprehensive validation for IP addresses, ports, and commands
+- **Command Sanitization**: Prevents dangerous commands from being executed
+- **Save Name Sanitization**: Ensures valid file names for saves
+
+### 🔄 **Reliability**
+- **Retry Logic**: Automatic retry for network operations (3 attempts with exponential backoff)
+- **Better Error Handling**: Specific error messages and proper exception handling
+- **Connection Resilience**: Handles network timeouts and connection issues
+
+### 📝 **Logging & Debugging**
+- **Structured Logging**: Centralized logging service with different log levels
+- **Debug Information**: Proper debug logging (only in DEBUG builds)
+- **Error Tracking**: Detailed error messages with stack traces
+
+### 🎨 **User Experience**
+- **Individual Loading States**: Separate loading indicators for different operations
+- **Better Feedback**: Clear status messages and error descriptions
+- **Input Validation**: Real-time validation with helpful error messages
 
 ## API Documentation
 
@@ -125,6 +158,8 @@ Most API functions require authentication using Bearer tokens. The application h
 - Passwords are stored in memory only and not persisted
 - HTTPS encryption is used for all server communication
 - Authentication tokens are automatically managed
+- Input validation prevents dangerous commands
+- Save names are sanitized to prevent file system issues
 
 ## Troubleshooting
 
@@ -133,16 +168,25 @@ Most API functions require authentication using Bearer tokens. The application h
 - Check that the HTTPS API is enabled (port 7777 by default)
 - Verify firewall settings allow HTTPS connections
 - For local servers, ensure the server is not loading a save game
+- The app will automatically retry failed connections
 
 ### Authentication Issues
 - Try passwordless login first for unclaimed servers
 - Use admin password for full server control
 - Check server logs for authentication errors
+- Application tokens are recommended for third-party access
 
 ### API Errors
 - The application displays detailed error messages from the server
 - Check server console for additional error information
 - Ensure server is not in a loading state when making requests
+- Network errors will be automatically retried
+
+### Validation Errors
+- Ensure server IP is in valid format (e.g., 127.0.0.1 or localhost)
+- Port must be between 1 and 65535
+- Commands are validated to prevent dangerous operations
+- Save names are automatically sanitized
 
 ## Learn More
 

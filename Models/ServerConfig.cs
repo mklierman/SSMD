@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Text.Json;
 using System;
 using System.IO;
+using SSMD.Services;
 
 namespace SSMD.Models;
 
@@ -86,7 +87,7 @@ public class ServerConfig : INotifyPropertyChanged
     // Persistence methods
     private static readonly string ConfigFilePath = "server_config.json";
 
-    public void Save()
+    public bool Save()
     {
         try
         {
@@ -101,15 +102,18 @@ public class ServerConfig : INotifyPropertyChanged
 
             var json = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(ConfigFilePath, json);
+            LoggingService.LogInfo("Configuration saved successfully");
+            return true;
         }
         catch (Exception ex)
         {
-            // Silently fail - don't want to break the app if saving fails
-            System.Diagnostics.Debug.WriteLine($"Failed to save config: {ex.Message}");
+            // Log the error but don't throw - don't want to break the app if saving fails
+            LoggingService.LogError("Failed to save configuration", ex);
+            return false;
         }
     }
 
-    public void Load()
+    public bool Load()
     {
         try
         {
@@ -125,13 +129,18 @@ public class ServerConfig : INotifyPropertyChanged
                     Username = config.Username;
                     ApplicationToken = config.ApplicationToken;
                     // Password is not loaded for security reasons
+                    LoggingService.LogInfo("Configuration loaded successfully");
+                    return true;
                 }
             }
+            LoggingService.LogInfo("No saved configuration found, using defaults");
+            return false;
         }
         catch (Exception ex)
         {
-            // Silently fail - don't want to break the app if loading fails
-            System.Diagnostics.Debug.WriteLine($"Failed to load config: {ex.Message}");
+            // Log the error but don't throw - don't want to break the app if loading fails
+            LoggingService.LogError("Failed to load configuration", ex);
+            return false;
         }
     }
 } 
