@@ -43,6 +43,11 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private bool _isConnecting = false;
 
+    partial void OnIsConnectingChanged(bool value)
+    {
+        OnPropertyChanged(nameof(CanConnect));
+    }
+
     [ObservableProperty]
     private bool _isRunningCommand = false;
 
@@ -64,6 +69,17 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private string _formattedActiveSchematic = "";
 
+    [ObservableProperty]
+    private bool _hasApiKey = false;
+
+    partial void OnHasApiKeyChanged(bool value)
+    {
+        OnPropertyChanged(nameof(CanConnect));
+    }
+
+    // Computed property that considers both API key and connection state
+    public bool CanConnect => HasApiKey && !IsConnecting;
+
     public IRelayCommand<string> LoadSaveGameCommand { get; }
 
     private SatisfactoryApiService? _apiService;
@@ -81,6 +97,9 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
             StatusMessage = "Failed to load saved configuration";
         }
         
+        // Initialize HasApiKey based on loaded configuration
+        HasApiKey = !string.IsNullOrWhiteSpace(ServerConfig.ApplicationToken);
+        
         // Subscribe to property changes to save configuration
         ServerConfig.PropertyChanged += (sender, e) =>
         {
@@ -93,6 +112,12 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
                 if (!saved)
                 {
                     StatusMessage = "Failed to save configuration";
+                }
+                
+                // Update HasApiKey when ApplicationToken changes
+                if (e.PropertyName == nameof(ServerConfig.ApplicationToken))
+                {
+                    HasApiKey = !string.IsNullOrWhiteSpace(ServerConfig.ApplicationToken);
                 }
             }
         };
@@ -161,53 +186,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         }
     }
 
-    [RelayCommand]
-    private async Task TestConnection()
-    {
-        try
-        {
-            IsConnecting = true;
-            StatusMessage = "Testing connection...";
 
-            // Validate server configuration
-            if (!ValidationService.IsValidIpAddress(ServerConfig.ServerIp))
-            {
-                StatusMessage = "Error: Invalid server IP address";
-                return;
-            }
-
-            if (!ValidationService.IsValidPort(ServerConfig.ServerPort))
-            {
-                StatusMessage = "Error: Invalid port number (must be 1-65535)";
-                return;
-            }
-
-            _apiService = new SatisfactoryApiService(ServerConfig);
-
-            // Test basic connectivity
-            var healthResponse = await _apiService.HealthCheckAsync();
-            
-            if (healthResponse.Success)
-            {
-                StatusMessage = $"✅ Connection successful! Server Health: {healthResponse.Data?.Health}";
-                CommandOutput = $"Connection test successful!\nServer Health: {healthResponse.Data?.Health}\nServer Custom Data: {healthResponse.Data?.ServerCustomData}\n\nNote: For full access, use an Application Token generated with 'server.GenerateAPIToken' in the server console.";
-            }
-            else
-            {
-                StatusMessage = $"❌ Connection failed: {healthResponse.ErrorMessage}";
-                CommandOutput = $"Connection test failed:\n{healthResponse.ErrorMessage}\n\nTroubleshooting tips:\n1. Verify server IP and port\n2. Check if HTTPS API is enabled on server\n3. Ensure server is running\n4. Try different port (default: 7777)";
-            }
-        }
-        catch (Exception ex)
-        {
-            StatusMessage = $"❌ Test error: {ex.Message}";
-            CommandOutput = $"Test error: {ex.Message}\n\nTroubleshooting tips:\n1. Check network connectivity\n2. Verify server is running\n3. Check firewall settings\n4. Try localhost (127.0.0.1) for local servers";
-        }
-        finally
-        {
-            IsConnecting = false;
-        }
-    }
 
     [RelayCommand]
     private async Task Login()

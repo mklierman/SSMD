@@ -77,13 +77,9 @@
                             </Grid>
                             
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button Content="Test Connection" 
-                                        Command="{Binding TestConnectionCommand}" 
-                                        IsEnabled="{Binding !IsConnecting}" 
-                                        Margin="0,0,10,0" Padding="15,8"/>
                                 <Button Content="Connect" 
                                         Command="{Binding ConnectCommand}" 
-                                        IsEnabled="{Binding !IsConnecting}" 
+                                        IsEnabled="{Binding CanConnect}" 
                                         Margin="0,0,10,0" Padding="15,8"/>
                                 <Button Content="Disconnect" 
                                         Command="{Binding DisconnectCommand}" 
